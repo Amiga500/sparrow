@@ -37,7 +37,20 @@ javafx {
 }
 
 java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(25)
+    }
     disableAutoTargetJvm()
+}
+
+subprojects {
+    pluginManager.withPlugin('java') {
+        java {
+            toolchain {
+                languageVersion = JavaLanguageVersion.of(25)
+            }
+        }
+    }
 }
 
 dependencies {
